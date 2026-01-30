@@ -5,6 +5,7 @@
 #include "knight.hpp"
 #include "pawn.hpp"
 #include "queen.hpp"
+#include "piece.hpp"
 
 
 Game::Game(){}
@@ -16,7 +17,7 @@ Game::~Game(){}
 void Game::init() {
     // Initialize the game
     // definine the pieces
-    King kw(),kb();
+    
     // Set up the board
     
     // Set up the players

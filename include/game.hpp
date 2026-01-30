@@ -12,6 +12,7 @@ class Game {
         Board board;
         int turn;
         Player winner;
+        
     public:
         Game();
         Game(Player, Player, Mode);
