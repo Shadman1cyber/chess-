@@ -3,24 +3,25 @@
 
 #include <iostream>
 #include <vector>
+#include "board.hpp"
 
 typedef std::pair<char, char> Position;
 class Piece{
     private:
         std::string color;
-        std::string Location;
+        Position Location;
         std::string Name;
 
     public:
-        Piece(const std::string& Location, const std::string& color);
+        Piece(const Position& Location, const std::string& color);
         ~Piece();
-        std::string get_Location() const;
+        Position get_Location() const;
         std::string getColor() const;
         std::string getName() const;
-        void set_Location(const std::string& loctaion);
+        void set_Location(const Position& loctaion);
         void setColor(const std::string& color);
-        virtual bool canMove(const std::string &from, const std::string &to, const std::vector<std::string> &board) = 0;
-        virtual void move(std::string& origin, std::string& destination, Piece& piece) = 0;
+        virtual bool canMove(const Position& from, const Position& to, const Board& board) = 0;
+        virtual void move(Position& origin, Position& destination, Piece& piece) = 0;
 };
 
 #endif //PEACE_HPP

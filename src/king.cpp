@@ -1,5 +1,5 @@
 #include "king.hpp"
 
-King::King(std::string location, std::string color): Piece(location, color) {}
-bool King::canMove(const std::string &from, const std::string &to, const std::vector<std::string> &board) {}
-void King::move(std::string& origin, std::string& destination, Piece& piece) {}
+King::King(Position& location, std::string& color): Piece(location, color) {}
+bool King::canMove(const Position& from, const Position& to, const Board& board) {}
+void King::move(Position& origin, Position& destination, Piece& piece) {}
