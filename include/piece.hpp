@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 
+typedef std::pair<char, char> Position;
 class Piece{
     private:
         std::string color;
