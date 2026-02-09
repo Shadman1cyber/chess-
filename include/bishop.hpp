@@ -7,9 +7,8 @@
 
 class Bishop : public Piece {
 public:
-    Bishop(const std::string &color,const Position& location);
-    bool canMove(const Position& from, const Position& to, const Board& board) override;
-    void move(Position& origin, Position& destination, Piece& piece) override;
+    Bishop(bool is_white);
+    bool canMove(const Board& board) override;
 };
 
 #endif // BISHOP_HPP

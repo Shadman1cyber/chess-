@@ -21,7 +21,7 @@ class Game {
         void init();
         void play();
         // i added implementation of printBoard function here (ali)
-        void printBoard(){board.display();};
+        void printBoard(){board.display();}
         void printWinner();
         void printTurn();
         void printPlayer();
@@ -64,7 +64,6 @@ class Game {
 		bool in_stalemate(const bool& white) const;
     	// Returns the total material point value of the designated player
         int point_value(const bool& white) const;
-
 
 };
 

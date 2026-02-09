@@ -5,9 +5,8 @@
 
 class King : public Piece {
     public:
-        King(Position& location, std::string& color);
-        bool canMove(const Position& from, const Position& to, const Board& board);
-        void move(Position& origin, Position& destination, Piece& piece) override;
+        King(bool is_white);
+        bool canMove(const Board& board) override;
 };
 
 #endif // KING_HPP

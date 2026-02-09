@@ -1,21 +1,8 @@
 #include "piece.hpp"
 
-Piece::Piece(const Position& Location, const std::string& color) : Location(Location), color(color){}
+Piece::Piece(bool is_white):Is_white(is_white){}
 Piece::~Piece(){}
 
-void Piece::set_Location(const Position& location){
-    this->Location = Location;
-}
-void Piece::setColor(const std::string& color){
-    this->color = color;
-}
-std::string Piece::getColor() const{
-    return color;
-}
-Position Piece::get_Location() const{
-    return Location;
-}
-std::string Piece::getName()const{
-    return Name;
-}
+void Piece::setColor(const bool is_white){this->Is_white = is_white;}
+bool Piece::getColor() const{return Is_white;}
 

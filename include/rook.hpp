@@ -5,9 +5,8 @@
 
 class Rook : public Piece {
     public:
-        Rook(Position& location, std::string& color);
-        bool canMove(const Position& from, const Position& to, const Board& board);
-        void move(Position& origin, Position& destination, Piece& piece) override;
+        Rook(bool is_white);
+        bool canMove(const Board& board) override;
 };
 
 #endif // ROOK_HPP

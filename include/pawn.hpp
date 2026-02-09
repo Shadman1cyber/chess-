@@ -5,9 +5,8 @@
 
 class Pawn : public Piece {
     public:
-    Pawn(Position& location, std::string& color);
-    bool canMove(const Position& from, const Position &to, const Board& board);
-    void move(Position& origin, Position& destination, Piece& piece) override;
+    Pawn(bool is_white);
+    bool canMove(const Board& board) override;
 };
 
 #endif // PAWN_HPP

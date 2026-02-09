@@ -17,7 +17,6 @@ Game::~Game(){}
 void Game::init() {
     // Initialize the game
     // definine the pieces
-    
     // Set up the board
     
     // Set up the players
