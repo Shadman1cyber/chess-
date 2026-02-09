@@ -15,7 +15,7 @@ class Piece{
         ~Piece();
         bool getColor() const;
         void setColor(bool Is_white);
-        virtual bool canMove(const Board& board) = 0;
+        virtual bool canMove(const Board& board);
 };
 
 #endif //PEACE_HPP
