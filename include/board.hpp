@@ -5,6 +5,7 @@
 #include <map>
 #include "piece.hpp"
 
+using namespace std;
 
 class Board{
         // Throughout, we will be accessing board positions using Position defined in Piece.h.
@@ -27,20 +28,20 @@ class Board{
 
         // Returns a const pointer to the piece at a prescribed location if it exists,
         // or nullptr if there is nothing there.
-        const Piece* operator() (const Position& position) const;
+        Piece* operator() (const string& position) const;
 
         // Returns the position of the requested piece
-        Position find_by_piece(const char& piece_designator) const;
+        string find_by_piece(const char& piece_designator) const;
 
         // Attempts to add a new piece with the specified designator, at the given position.
         // Throw exception for the following cases:
         // -- the designator is invalid, throw exception with error message "invalid designator"
         // -- the specified position is not on the board, throw exception with error message "invalid position"
         // -- if the specified position is occupied, throw exception with error message "position is occupied"
-        void add_piece(const std::string position, Piece piece_designator);
+        void add_piece(const string& position, Piece * piece);
 
         // Removes a piece object at the given position.
-        void remove_piece(const Position& position);
+        void remove_piece(const string& position);
 
         // Remove all pieces in a board
         void remove_all();
@@ -55,67 +56,69 @@ class Board{
         void cleanup();
 
         // Map to store the locations and types of each piece
-        typedef std::map<Position, Piece*> BoardType;
+        typedef map<string, Piece*> BoardType;
 
         // Constant Iterator for the Board object
         // Keeps track of a cell location at all times, and moves up/right
         class const_iterator {
-        public:
-            const_iterator(Position initial_pos) : pos(initial_pos) {};
+            public:
 
-            // Moves pointer to next cell
-            const_iterator &operator++() {
-                char cur_col = pos.first;
-                int cur_row = pos.second;
+                const_iterator(std::string initial_pos) : pos(initial_pos) {}
+                const_iterator& operator++() {
+                    if (pos.empty())
+                        return *this;
 
-                // Makes sure we don't move off the board when we get to end of row
-                if (cur_col == 'H') {
-                    // Refers to cell out of bounds of iterator (i.e. .end());
-                    if (cur_row == '8') {
-                        pos = Position(-1, -1);
+                    char cur_col = pos[0];
+                    char cur_row = pos[1]; 
+
+                    if (cur_col == 'H') {
+                        if (cur_row == '8') {
+                            pos = "";
+                        } else {
+                            pos = string{ 'A', char(cur_row + 1) };
+                        }
                     } else {
-                        pos = Position('A', cur_row + 1);
+                        pos = string{ char(cur_col + 1), cur_row };
                     }
-                // Next position to visit when traversing as normal (not end of row)
-                } else {
-                    pos = Position(cur_col + 1, cur_row);
-                }
-                
-                return *this;
+
+                    return *this;
+                    }
+
+            const std::string& operator*() const {
+                return pos;
             }
 
             // Overload == operator to check if two iterators point to the same location
             bool operator==(const const_iterator &o) const { 
-                return (pos.first == o.pos.first && pos.second == o.pos.second);
+                return (pos[0] == o.pos[0] && pos[1] == o.pos[1]);
             }
 
             // Checks if two iterators don't point to the same location
             bool operator!=(const const_iterator &o) const { return !(*this == o); }
 
             // Returns position the iterator is currently on
-            Position current_pos() { return pos; }
+            string current_pos() { return pos; }
 
-        private:
-            Position pos;
+            private:
+                string pos;
         };
 
-        // Returns an iterator pointing to "one-past" the last cell in the board
-        const_iterator cend() const {
-            return const_iterator(Position(-1, -1));
+       const_iterator cend() const {
+            return const_iterator("");
         }
 
         // Returns an iterator pointing to first cell in the board (bottom-left)
         const_iterator cbegin() const {
-            return const_iterator(Position('A', '1'));
+            return const_iterator(string{"A1"});
         }
 
 
     private:
         // The sparse map storing the pieces, keyed off locations
-        std::map<Position, Piece*> occ;
+        map<string, Piece*> occ;
 
         // Write the board state to an output stream
-        friend std::ostream& operator<< (std::ostream& os, const Board& board);
+        friend ostream& operator<< (ostream& os, const Board& board);
 };
 
 #endif //BOARD_HPP
