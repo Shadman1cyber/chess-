@@ -15,8 +15,7 @@ class Game {
         Player winner;
         
     public:
-        Game();
-        Game(Player, Player, Mode);
+        Game(Player&, Player&, Mode);
         ~Game();
         void init();
         void play();

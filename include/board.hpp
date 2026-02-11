@@ -38,7 +38,9 @@ class Board{
         // -- the designator is invalid, throw exception with error message "invalid designator"
         // -- the specified position is not on the board, throw exception with error message "invalid position"
         // -- if the specified position is occupied, throw exception with error message "position is occupied"
-        void add_piece(const string& position, Piece * piece);
+        void add_piece(const string& position, Piece* piece);
+
+        Piece* get_piece(const string& position) const;
 
         // Removes a piece object at the given position.
         void remove_piece(const string& position);
