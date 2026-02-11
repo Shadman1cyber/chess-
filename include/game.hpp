@@ -18,7 +18,7 @@ class Game {
         Game(Player&, Player&, Mode);
         ~Game();
         void init();
-        void play();
+        void play(Board& board);
         // i added implementation of printBoard function here (ali)
         void printBoard(){board.display();}
         void printWinner();

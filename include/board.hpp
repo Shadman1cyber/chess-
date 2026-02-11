@@ -31,7 +31,7 @@ class Board{
         Piece* operator() (const string& position) const;
 
         // Returns the position of the requested piece
-        string find_by_piece(const char& piece_designator) const;
+        string find_by_piece(const string& piece_designator) const;
 
         // Attempts to add a new piece with the specified designator, at the given position.
         // Throw exception for the following cases:

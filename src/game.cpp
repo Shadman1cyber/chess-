@@ -67,21 +67,31 @@ void Game::init() {
     std::cout<<"enter second players name:";
     cin >> name;
     player2.setName(name);
-    play();
+    play(board);
 }
 
-void Game::play() {
+void Game::play(Board& board) {
     std::cout << "Game started" << std::endl;
     // Game loop
+    turn = true;
     while (true) {
         if(turn){
             std::string tmp;
             std::cout << "Player 1's turn" << std::endl;
             std::cout << "chose your piece:" << std::endl;
             cin >> tmp;
+            if(tmp == "" && board.find_by_piece(tmp) != ""){
+                std::cout << "chose your destination: \n";
+                cin >> tmp;
+            }
+            else{
+                std::cout << "There's no such piece" << std::endl;
+            }
+            turn = false;
         }
         else{
             std::cout << "Player 2's turn" << std::endl;
+            turn = true;
         }
     }
 }
