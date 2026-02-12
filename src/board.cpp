@@ -41,7 +41,7 @@ Piece* Board::operator()(const string &position) const {
 }
 
 
-string Board::find_by_piece(const char &piece_designator) const {
+string Board::find_by_piece(const std::string& piece_designator) const {
     for (const auto &entry : occ) {
         if (entry.second->symbol() == piece_designator)
             return entry.first;

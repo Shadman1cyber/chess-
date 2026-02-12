@@ -43,7 +43,7 @@ class Game {
         bool turn_white() const { return turn; }
 
         bool is_valid_game() const { return board.has_valid_kings(); }
-        void make_move(const string& start, const string& end);
+        void make_move(const Piece p, const string& end);
 		bool in_check(const bool& white) const;
 		// Test if the path is clear to the destination
 		bool is_path_clear(const string& start, const string& end) const;

@@ -1,4 +1,4 @@
 #include "king.hpp"
 
-King::King(bool is_white): Piece(is_white) {}
-bool King::canMove(const Board& board) {}
+King::King(bool is_white,std::string name): Piece(is_white, name){}
+bool King::canMove(const Board& board, std::string destination) const {}

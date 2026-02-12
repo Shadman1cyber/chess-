@@ -6,8 +6,8 @@
 class Queen : public Piece {
         
     public:
-        Queen(bool is_white);
-        bool canMove(const Board& board) override;
+        Queen(bool is_white, std::string name);
+        bool canMove(const Board& board, std::string destination) const override;
 };
 
 #endif // QUEEN_HPP

@@ -7,8 +7,8 @@
 
 class Bishop : public Piece {
 public:
-    Bishop(bool is_white);
-    bool canMove(const Board& board) override;
+    Bishop(bool is_white,std::string name);
+    bool canMove(const Board& board, std::string destination) const override;
 };
 
 #endif // BISHOP_HPP

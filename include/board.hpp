@@ -33,6 +33,9 @@ class Board{
         // Returns the position of the requested piece
         string find_by_piece(const string& piece_designator) const;
 
+        //added by me (mahdi)
+        Piece return_piece(std::string name) const;
+
         // Attempts to add a new piece with the specified designator, at the given position.
         // Throw exception for the following cases:
         // -- the designator is invalid, throw exception with error message "invalid designator"

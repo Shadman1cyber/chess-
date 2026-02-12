@@ -5,8 +5,8 @@
 
 class Knight : public Piece {
     public:
-        Knight(bool is_white);
-        bool canMove(const Board& board);
+        Knight(bool is_white, std::string name);
+        bool canMove(const Board& board, std::string destination) const;
 };
 
 #endif

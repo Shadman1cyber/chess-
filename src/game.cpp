@@ -16,12 +16,12 @@ Game::~Game(){}
 void Game::init() {
     // Initialize the game
     // definine the pieces
-    King kw(true), kb(false);
-    Rook rw1(true), rb1(false), rw2(true), rb2(false);
-    Bishop bw1(true), bb1(false), bw2(true), bb2(false);
-    Knight knw1(true), knb1(false), knw2(true), knb2(false);
-    Queen qw(true), qb(false);
-    Pawn apw(true), apb(false), bpw(true), bpb(false), cpw(true), cpb(false), dpw(true), dpb(false), epw(true), epb(false), fpw(true), fpb(false), gpw(true), gpb(false), hpw(true), hpb(false);
+    King kw(true,"kw"), kb(false,"kb");
+    Rook rw1(true,"rw1"), rb1(false,"rb1"), rw2(true,"rw2"), rb2(false,"rb2");
+    Bishop bw1(true,"bw1"), bb1(false,"bb1"), bw2(true,"bw2"), bb2(false,"bb2");
+    Knight knw1(true,"knw1"), knb1(false,"knb1"), knw2(true, "knw2"), knb2(false,"knb2");
+    Queen qw(true, "qw"), qb(false,"qb");
+    Pawn apw(true,"apw"), apb(false,"apb"), bpw(true,"bpw"), bpb(false,"bpb"), cpw(true,"cpw"), cpb(false,"cpb"), dpw(true,"dpw"), dpb(false,"dpb"), epw(true,"epw"), epb(false,"epb"), fpw(true,"fpw"), fpb(false,"fpb"), gpw(true,"gpw"), gpb(false,"gpb"), hpw(true,"hpw"), hpb(false,"hpb");
     // Set up the board
     Board board;
     // Set up the pieces
@@ -76,21 +76,41 @@ void Game::play(Board& board) {
     turn = true;
     while (true) {
         if(turn){
-            std::string tmp;
+            std::string stmp;
             std::cout << "Player 1's turn" << std::endl;
             std::cout << "chose your piece:" << std::endl;
-            cin >> tmp;
-            if(tmp == "" && board.find_by_piece(tmp) != ""){
+            cin >> stmp;
+            if(stmp == "" && board.find_by_piece(stmp) != ""){
+                Piece ptmp = board.return_piece(stmp);
                 std::cout << "chose your destination: \n";
-                cin >> tmp;
-            }
-            else{
+                cin >> stmp;
+                if(ptmp.canMove(board,stmp)){
+                    make_move(ptmp,stmp);
+                }
+            }else if(board.find_by_piece(stmp) == ""){
                 std::cout << "There's no such piece" << std::endl;
+            }else if(stmp == ""){
+                std::cout << "You need to chose a piece" << std::endl;
             }
             turn = false;
         }
         else{
+            std::string stmp;
             std::cout << "Player 2's turn" << std::endl;
+            std::cout << "chose your piece:" << std::endl;
+            cin >> stmp;
+            if(stmp == "" && board.find_by_piece(stmp) != ""){
+                Piece ptmp = board.return_piece(stmp);
+                std::cout << "chose your destination: \n";
+                cin >> stmp;
+                if(ptmp.canMove(board,stmp)){
+                    make_move(ptmp,stmp);
+                }
+            }else if(stmp == ""){
+                std::cout << "You need to chose a piece" << std::endl;
+            }else if(board.find_by_piece(stmp) == ""){
+                std::cout << "There's no such piece" << std::endl;
+            }
             turn = true;
         }
     }

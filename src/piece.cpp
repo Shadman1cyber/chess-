@@ -1,6 +1,6 @@
 #include "piece.hpp"
 
-Piece::Piece(bool is_white):Is_white(is_white){}
+Piece::Piece(bool is_white, std::string name):Is_white(is_white), name(name){}
 Piece::~Piece(){}
 
 void Piece::setColor(const bool is_white){this->Is_white = is_white;}
