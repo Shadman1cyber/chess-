@@ -10,8 +10,7 @@ class Game {
         Player player1, player2;
         Mode mode;
         Board board;
-        // i changed turn type to boolian (ali)
-        bool turn;
+        static bool turn;
         Player winner;
         
     public:
@@ -19,7 +18,6 @@ class Game {
         ~Game();
         void init();
         void play(Board& board);
-        // i added implementation of printBoard function here (ali)
         void printBoard(){board.display();}
         void printWinner();
         void printTurn();
@@ -36,12 +34,13 @@ class Game {
         Player getWinner();
 
 
-        // these are added by me(ali)
+        // these are added
 
         Game& operator=(const Game &game);
+        static bool turn_white() { return turn; }
 
         bool is_valid_game() const { return board.has_valid_kings(); }
-        bool make_move(Piece& p, const string& destination);
+        void make_move(Piece& p, const string& destination);
 		bool in_check(const bool& white) const;
 		// Test if the path is clear to the destination
 		bool is_path_clear(const Piece p, const string& destination) const;

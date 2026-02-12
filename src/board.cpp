@@ -1,7 +1,7 @@
 #include "board.hpp"
 #include "include/piece.hpp"
 #include "king.hpp"
-
+#include "game.hpp"
 
 #include <iostream>
 #include <stdexcept>
@@ -204,3 +204,28 @@ bool Board::isStalemate(bool is_white) const {
 
     return true;
 }
+
+
+void Board::make_move(Piece& p, const string& destination) {
+        
+        string start = find_by_piece(p.symbol());
+        
+        // Throw s if player tries to make an illegal move
+        if (start[0] > 'H' || start[0] < 'A' || start[1] < '1' || start[1] > '8') {
+            throw ("start position is not on board");
+        }
+
+        
+
+        if (destination[0] > 'H' || destination[1] < 'A' || destination[2] < '1' || destination[2] > '8') {
+            throw ("destination position is not on board");
+        }
+
+        if (p.getColor() != Game::turn_white()) {
+            throw ("piece color and turn do not match");
+        }
+        
+        occ.erase(start);
+        occ[destination] = &p;
+
+	}

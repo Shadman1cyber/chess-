@@ -129,6 +129,7 @@ class Board{
             return const_iterator(string{"A1"});
         }
 
+        void make_move(Piece& p, const string& destination);
 
     private:
         // The sparse map storing the pieces, keyed off locations
