@@ -77,7 +77,7 @@ bool Board::isSquareUnderAttack(const std::string& square, bool by_white) const 
             pos += col;
             pos += row;
 
-            Piece* p = &return_piece(pos);
+            Piece* p = return_piece(pos);
             if (!p || p->getColor() != by_white) 
                 continue;
 
@@ -102,7 +102,7 @@ std::string Board::findKing(bool is_white) const {
             pos += col;
             pos += row;
 
-            Piece* p = &return_piece(pos);
+            Piece* p = return_piece(pos);
             if (p && p->getColor() == is_white && dynamic_cast<King*>(p))
                 return pos;
         }
@@ -121,7 +121,7 @@ bool Board::isInCheck(bool is_white) const {
 bool Board::wouldBeInCheckAfterMove(const std::string& from, const std::string& to, bool is_white) const {
     Board temp(*this);
 
-    Piece* moving = &temp.return_piece(from);
+    Piece* moving = temp.return_piece(from);
     if (!moving) return true;
 
     temp.setPiece(to, moving);
@@ -132,7 +132,7 @@ bool Board::wouldBeInCheckAfterMove(const std::string& from, const std::string& 
 
 std::vector<std::string> Board::getLegalMoves(const std::string& from) const {
     std::vector<std::string> legal;
-    Piece* p = &return_piece(from);
+    Piece* p = return_piece(from);
     if (!p) return legal;
 
     bool is_white = p->getColor();
