@@ -1,5 +1,6 @@
 #include "board.hpp"
 #include "include/piece.hpp"
+#include "king.hpp"
 
 
 #include <iostream>
@@ -69,3 +70,137 @@ void Board::add_piece(const string &position,Piece* piece) {
     occ[position] = piece;
 }
 
+bool Board::isSquareUnderAttack(const std::string& square, bool by_white) const {
+    for (char col = 'a'; col <= 'h'; col++) {
+        for (char row = '1'; row <= '8'; row++) {
+            std::string pos;
+            pos += col;
+            pos += row;
+
+            Piece* p = &return_piece(pos);
+            if (!p || p->getColor() != by_white) 
+                continue;
+
+            if (dynamic_cast<King*>(p)) {
+                int dc = std::abs(pos[0] - square[0]);
+                int dr = std::abs(pos[1] - square[1]);
+                if (dc <= 1 && dr <= 1 && (dc + dr > 0))
+                    return true;
+            } else {
+                if (p->canMove(*this, square))
+                    return true;
+            }
+        }
+    }
+    return false;
+}
+
+std::string Board::findKing(bool is_white) const {
+    for (char col = 'a'; col <= 'h'; col++) {
+        for (char row = '1'; row <= '8'; row++) {
+            std::string pos;
+            pos += col;
+            pos += row;
+
+            Piece* p = &return_piece(pos);
+            if (p && p->getColor() == is_white && dynamic_cast<King*>(p))
+                return pos;
+        }
+    }
+    return "";
+}
+
+bool Board::isInCheck(bool is_white) const {
+    std::string king_pos = findKing(is_white);
+    if (king_pos.empty()) 
+        return false;
+
+    return isSquareUnderAttack(king_pos, !is_white);
+}
+
+bool Board::wouldBeInCheckAfterMove(const std::string& from, const std::string& to, bool is_white) const {
+    Board temp(*this);
+
+    Piece* moving = &temp.return_piece(from);
+    if (!moving) return true;
+
+    temp.setPiece(to, moving);
+    temp.setPiece(from, nullptr);
+
+    return temp.isInCheck(is_white);
+}
+
+std::vector<std::string> Board::getLegalMoves(const std::string& from) const {
+    std::vector<std::string> legal;
+    Piece* p = &return_piece(from);
+    if (!p) return legal;
+
+    bool is_white = p->getColor();
+
+    for (char col = 'a'; col <= 'h'; col++) {
+        for (char row = '1'; row <= '8'; row++) {
+            std::string dest;
+            dest += col;
+            dest += row;
+
+            if (dest == from) 
+                continue;
+
+            if (!p->canMove(*this, dest)) 
+                continue;
+
+            if (!wouldBeInCheckAfterMove(from, dest, is_white))
+                legal.push_back(dest);
+        }
+    }
+    return legal;
+}
+
+bool Board::isCheckmate(bool is_white) const {
+
+    if (!isInCheck(is_white)) {
+        return false;
+    }
+
+    for (char col = 'A'; col <= 'H'; col++) {
+        for (char row = '1'; row <= '8'; row++) {
+            std::string pos;
+            pos += col;
+            pos += row;
+
+            Piece* p = (*this)(pos);
+            if (p && p->getColor() == is_white) {
+                std::vector<std::string> moves = getLegalMoves(pos);
+                if (!moves.empty()) {
+                    return false;
+                }
+            }
+        }
+    }
+
+    return true;
+}
+
+bool Board::isStalemate(bool is_white) const {
+    if (isInCheck(is_white)) {
+        return false;
+    }
+
+    for (char col = 'A'; col <= 'H'; col++) {
+        for (char row = '1'; row <= '8'; row++) {
+            std::string pos;
+            pos += col;
+            pos += row;
+
+            Piece* p = (*this)(pos);
+            if (p && p->getColor() == is_white) {
+                std::vector<std::string> moves = getLegalMoves(pos);
+                if (!moves.empty()) {
+                    return false;
+                }
+            }
+        }
+    }
+
+    return true;
+}

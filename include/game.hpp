@@ -15,7 +15,7 @@ class Game {
         Player winner;
         
     public:
-        Game(Player&, Player&, Mode);
+        Game();
         ~Game();
         void init();
         void play(Board& board);
@@ -39,14 +39,12 @@ class Game {
         // these are added by me(ali)
 
         Game& operator=(const Game &game);
-        // Returns true if it is white's turn
-        bool turn_white() const { return turn; }
 
         bool is_valid_game() const { return board.has_valid_kings(); }
-        void make_move(const Piece p, const string& end);
+        bool make_move(Piece& p, const string& destination);
 		bool in_check(const bool& white) const;
 		// Test if the path is clear to the destination
-		bool is_path_clear(const string& start, const string& end) const;
+		bool is_path_clear(const Piece p, const string& destination) const;
 		// Is the path linear (diagonal, horizontal, vertical)
 		bool is_path_linear(const string& start, const string& end) const;
 		// Sees if a move will result in check

@@ -8,7 +8,7 @@
 #include "piece.hpp"
 
 
-Game::Game(Player& p1, Player& p2, Mode) : player1(p1), player2(p2), mode(mode) {
+Game::Game() {
     init();
 }
 Game::~Game(){}
@@ -60,13 +60,23 @@ void Game::init() {
     // Set up the game
     player1.setScore(0);
     player2.setScore(0);
-    std::cout<<"enter first players name:";
+    std::cout<<"enter first players name:\n";
     std::string name;
     cin >> name;
     player1.setName(name);
-    std::cout<<"enter second players name:";
+    std::cout<<"enter second players name:\n";
     cin >> name;
     player2.setName(name);
+    std::cout << "enter your game mode:\n 1.standard\n2.energy mode\n3.mission mode\n";
+    int tmp = 0;
+    cin >> tmp;
+    if(tmp == 1){
+        mode = Mode::Standard;
+    }else if(tmp == 2){
+        mode = Mode::EnergyMode;
+    }else if(tmp == 3){
+        mode = Mode::MissionMode;
+    }
     play(board);
 }
 
@@ -74,8 +84,8 @@ void Game::play(Board& board) {
     std::cout << "Game started" << std::endl;
     // Game loop
     turn = true;
-    while (true) {
-        if(turn){
+    while (true && mode == Mode::Standard) {
+        while(turn){
             std::string stmp;
             std::cout << "Player 1's turn" << std::endl;
             std::cout << "chose your piece:" << std::endl;
@@ -84,7 +94,7 @@ void Game::play(Board& board) {
                 Piece ptmp = board.return_piece(stmp);
                 std::cout << "chose your destination: \n";
                 cin >> stmp;
-                if(ptmp.canMove(board,stmp)){
+                if(ptmp.canMove(board,stmp) && is_path_clear(ptmp,stmp)){
                     make_move(ptmp,stmp);
                 }
             }else if(board.find_by_piece(stmp) == ""){
@@ -92,9 +102,8 @@ void Game::play(Board& board) {
             }else if(stmp == ""){
                 std::cout << "You need to chose a piece" << std::endl;
             }
-            turn = false;
         }
-        else{
+        while (!turn){
             std::string stmp;
             std::cout << "Player 2's turn" << std::endl;
             std::cout << "chose your piece:" << std::endl;
@@ -103,7 +112,7 @@ void Game::play(Board& board) {
                 Piece ptmp = board.return_piece(stmp);
                 std::cout << "chose your destination: \n";
                 cin >> stmp;
-                if(ptmp.canMove(board,stmp)){
+                if(ptmp.canMove(board,stmp) && is_path_clear(ptmp,stmp)){
                     make_move(ptmp,stmp);
                 }
             }else if(stmp == ""){
@@ -111,7 +120,6 @@ void Game::play(Board& board) {
             }else if(board.find_by_piece(stmp) == ""){
                 std::cout << "There's no such piece" << std::endl;
             }
-            turn = true;
         }
     }
 }

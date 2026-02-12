@@ -35,7 +35,19 @@ class Board{
 
         //added by me (mahdi)
         Piece return_piece(std::string name) const;
+        void setPiece(const std::string& destination, Piece* p);
 
+        //check detection
+        bool isSquareUnderAttack(const std::string& square, bool by_white) const;
+        std::string findKing(bool is_white) const;
+        bool isInCheck(bool is_white) const;
+
+        //legal move filtering
+        bool wouldBeInCheckAfterMove(const std::string& from,const std::string& to, bool is_white) const;
+        std::vector<std::string> getLegalMoves(const std::string& from) const;
+
+        bool isCheckmate(bool is_white) const;
+        bool isStalemate(bool is_white) const;
         // Attempts to add a new piece with the specified designator, at the given position.
         // Throw exception for the following cases:
         // -- the designator is invalid, throw exception with error message "invalid designator"

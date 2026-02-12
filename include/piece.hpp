@@ -15,6 +15,7 @@ class Piece{
         ~Piece();
         bool getColor() const;
         void setColor(bool Is_white);
+        std::string get_name(){return name;}
         virtual bool canMove(const Board& board, std::string destination) const;
         // adding a function that returns the symbol of the piece 
         // for example pawn most return wpn idk?!
