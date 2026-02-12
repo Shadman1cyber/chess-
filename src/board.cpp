@@ -229,3 +229,23 @@ void Board::make_move(Piece& p, const string& destination) {
         occ[destination] = &p;
 
 	}
+
+
+    Piece* Board::get_piece(const string& position) const {
+    auto it = occ.find(position);
+    if (it == occ.end())
+        return nullptr;
+    return it->second;
+    }
+
+    void Board::cleanup() {
+    for (auto &entry : occ) {
+        delete entry.second;
+    }
+    occ.clear();
+    }
+
+    void Board::remove_all() {
+    cleanup();
+    }
+

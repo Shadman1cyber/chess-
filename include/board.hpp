@@ -34,7 +34,7 @@ class Board{
         string find_by_piece(const string& piece_designator) const;
 
         //added by me (mahdi)
-        Piece return_piece(std::string name) const;
+        Piece* Board::return_piece(std::string name) const {return get_piece(name);}
         void setPiece(const std::string& destination, Piece* p);
 
         //check detection
