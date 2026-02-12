@@ -25,38 +25,43 @@ void Game::init() {
     // Set up the board
     Board board;
     // Set up the pieces
-    board.add_piece("a1",&rw1);
-    board.add_piece("b1",&knw1);
-    board.add_piece("c1",&bw1);
-    board.add_piece("d1",&qw);
-    board.add_piece("e1",&kw);
-    board.add_piece("f1",&bw2);
-    board.add_piece("g1",&knw2);
-    board.add_piece("h1",&rw2);
-    board.add_piece("a2",&apw);
-    board.add_piece("b2",&bpw);
-    board.add_piece("c2",&cpw);
-    board.add_piece("d2",&dpw);
-    board.add_piece("e2",&epw);
-    board.add_piece("f2",&fpw);
-    board.add_piece("g2",&gpw);
-    board.add_piece("h2",&hpw);
-    board.add_piece("a7",&apb);
-    board.add_piece("b7",&bpb);
-    board.add_piece("c7",&cpb);
-    board.add_piece("d7",&dpb);
-    board.add_piece("e7",&epb);
-    board.add_piece("f7",&fpb);
-    board.add_piece("g7",&gpb);
-    board.add_piece("h7",&hpb);
-    board.add_piece("a8",&rb1);
-    board.add_piece("b8",&knb1);
-    board.add_piece("c8",&bb1);
-    board.add_piece("d8",&qb);
-    board.add_piece("e8",&kb);
-    board.add_piece("f8",&bb2);
-    board.add_piece("g8",&knb2);
-    board.add_piece("h8",&rb2);
+
+    board.add_piece("a1", new Rook(true,"rw1"));
+    board.add_piece("b1", new Knight(true,"knw1"));
+    board.add_piece("c1", new Bishop(true,"bw1"));
+    board.add_piece("d1", new Queen(true,"qw"));
+    board.add_piece("e1", new King(true,"kw"));
+    board.add_piece("f1", new Bishop(true,"bw2"));
+    board.add_piece("g1", new Knight(true,"knw2"));
+    board.add_piece("h1", new Rook(true,"rw2"));
+
+    board.add_piece("a2", new Pawn(true,"apw"));
+    board.add_piece("b2", new Pawn(true,"bpw"));
+    board.add_piece("c2", new Pawn(true,"cpw"));
+    board.add_piece("d2", new Pawn(true,"dpw"));
+    board.add_piece("e2", new Pawn(true,"epw"));
+    board.add_piece("f2", new Pawn(true,"fpw"));
+    board.add_piece("g2", new Pawn(true,"gpw"));
+    board.add_piece("h2", new Pawn(true,"hpw"));
+
+    board.add_piece("a8", new Rook(false,"rb1"));
+    board.add_piece("b8", new Knight(false,"knb1"));
+    board.add_piece("c8", new Bishop(false,"bb1"));
+    board.add_piece("d8", new Queen(false,"qb"));
+    board.add_piece("e8", new King(false,"kb"));
+    board.add_piece("f8", new Bishop(false,"bb2"));
+    board.add_piece("g8", new Knight(false,"knb2"));
+    board.add_piece("h8", new Rook(false,"rb2"));
+
+    board.add_piece("a7", new Pawn(false,"apb"));
+    board.add_piece("b7", new Pawn(false,"bpb"));
+    board.add_piece("c7", new Pawn(false,"cpb"));
+    board.add_piece("d7", new Pawn(false,"dpb"));
+    board.add_piece("e7", new Pawn(false,"epb"));
+    board.add_piece("f7", new Pawn(false,"fpb"));
+    board.add_piece("g7", new Pawn(false,"gpb"));
+    board.add_piece("h7", new Pawn(false,"hpb"));
+
     // Set up the game
     player1.setScore(0);
     player2.setScore(0);
@@ -91,7 +96,7 @@ void Game::play(Board& board) {
             std::cout << "chose your piece:" << std::endl;
             cin >> stmp;
             if(stmp == "" && board.find_by_piece(stmp) != ""){
-                Piece ptmp = board.return_piece(stmp);
+                Piece ptmp = *board.return_piece(stmp);
                 std::cout << "chose your destination: \n";
                 cin >> stmp;
                 if(ptmp.canMove(board,stmp) && is_path_clear(ptmp,stmp)){
@@ -109,7 +114,7 @@ void Game::play(Board& board) {
             std::cout << "chose your piece:" << std::endl;
             cin >> stmp;
             if(stmp == "" && board.find_by_piece(stmp) != ""){
-                Piece ptmp = board.return_piece(stmp);
+                Piece ptmp = *board.return_piece(stmp);
                 std::cout << "chose your destination: \n";
                 cin >> stmp;
                 if(ptmp.canMove(board,stmp) && is_path_clear(ptmp,stmp)){
@@ -122,4 +127,92 @@ void Game::play(Board& board) {
             }
         }
     }
+}
+
+
+// added by me(ali)
+
+bool Game::is_path_linear(const string& start, const string& end) const {
+
+    int dc = end[0] - start[0];
+    int dr = end[1] - start[1];
+
+    if (dc == 0 || dr == 0)
+        return true;
+
+    if (abs(dc) == abs(dr))
+        return true;
+
+    return false;
+}
+
+bool Game::is_path_clear(const Piece p, const string& destination) const {
+
+    string start = board.find_by_piece(p.symbol());
+
+    if (!is_path_linear(start, destination))
+        return true; // knights ignore
+
+    int dc = (destination[0] - start[0]);
+    int dr = (destination[1] - start[1]);
+
+    dc = (dc == 0) ? 0 : dc / abs(dc);
+    dr = (dr == 0) ? 0 : dr / abs(dr);
+
+    char col = start[0] + dc;
+    char row = start[1] + dr;
+
+    while (col != destination[0] || row != destination[1]) {
+        string pos;
+        pos += col;
+        pos += row;
+
+        if (board.get_piece(pos) != nullptr)
+            return false;
+
+        col += dc;
+        row += dr;
+    }
+
+    return true;
+}
+
+bool Game::in_check(const bool& white) const {
+    return board.isInCheck(white);
+}
+
+bool Game::in_mate(const bool& white) const {
+    return board.isCheckmate(white);
+}
+
+bool Game::in_stalemate(const bool& white) const {
+    return board.isStalemate(white);
+}
+
+
+int Game::point_value(const bool& white) const {
+
+    int score = 0;
+
+    for (char col = 'A'; col <= 'H'; col++) {
+        for (char row = '1'; row <= '8'; row++) {
+
+            string pos;
+            pos += col;
+            pos += row;
+
+            Piece* p = board.get_piece(pos);
+
+            if (!p || p->getColor() != white)
+                continue;
+
+            if (dynamic_cast<Queen*>(p)) score += 9;
+            else if (dynamic_cast<Rook*>(p)) score += 5;
+            else if (dynamic_cast<Bishop*>(p)) score += 3;
+            else if (dynamic_cast<Knight*>(p)) score += 3;
+            else if (dynamic_cast<Pawn*>(p)) score += 1;
+        }
+    }
+
+    return score;
 }

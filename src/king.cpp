@@ -10,7 +10,7 @@ bool King::canMove(const Board& board, std::string destination) const {
     if (dc > 1 || dr > 1 || (dc == 0 && dr == 0))
         return false;
 
-    Piece* dest = &board.return_piece(destination);
+    Piece* dest = board.return_piece(destination);
     if (dest && dest->getColor() == this->getColor())
         return false;
 
