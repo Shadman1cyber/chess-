@@ -64,9 +64,9 @@ void IO::printCell(const Board& board,const string& pos,bool highlight,bool is_w
         else
             cout << BLACK_TEXT;
 
-        cout << " " << p->symbol()[0] << " ";
+        cout << " " << p->symbol()[0] << p->symbol()[1] << p->symbol()[2] << " ";
     } else {
-        cout << "   ";
+        cout << "     ";
     }
 
     cout << RESET;
