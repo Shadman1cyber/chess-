@@ -23,7 +23,7 @@ void Game::init() {
     Queen qw(true, "qw"), qb(false,"qb");
     Pawn apw(true,"apw"), apb(false,"apb"), bpw(true,"bpw"), bpb(false,"bpb"), cpw(true,"cpw"), cpb(false,"cpb"), dpw(true,"dpw"), dpb(false,"dpb"), epw(true,"epw"), epb(false,"epb"), fpw(true,"fpw"), fpb(false,"fpb"), gpw(true,"gpw"), gpb(false,"gpb"), hpw(true,"hpw"), hpb(false,"hpb");
     // Set up the board
-    Board board;
+    static Board board;
     // Set up the pieces
 
     board.add_piece("a1", new Rook(true,"rw1"));
