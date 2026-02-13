@@ -12,6 +12,32 @@ class Game {
         Board board;
         static bool turn;
         Player winner;
+        // Internal buffers for reading full-line player names
+        std::string player1_name_buffer;
+        std::string player2_name_buffer;
+        // Energy mode state
+        int white_energy = 100;
+        int black_energy = 100;
+        // Mission mode state
+        int mission_max_turns = 0;
+        int mission_turns_used = 0;
+        bool mission_for_white = true;
+        std::string mission_description;
+        // History for undo/redo-like behaviour
+        std::vector<std::string> history_states;
+        // Internal helpers
+        void playStandard();
+        void playEnergy();
+        void playMission();
+        int energyCostForPiece(const Piece& p) const;
+        // Persistence helpers
+        bool saveGame(const std::string& filename) const;
+        bool loadGame(const std::string& filename);
+        // In-memory serialization for history / undo
+        std::string serializeState() const;
+        bool deserializeState(const std::string& data);
+        void pushHistory();
+        bool undoLast();
         
     public:
         Game();
