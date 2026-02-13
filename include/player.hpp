@@ -8,7 +8,7 @@ class Player{
         std::string name;
         int score;
     public:
-        Player();   
+        Player() = default;  
         void setName(std::string);
         std::string getName();
         void setScore(int);

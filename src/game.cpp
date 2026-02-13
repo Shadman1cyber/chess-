@@ -13,6 +13,8 @@ Game::Game() {
 }
 Game::~Game(){}
 
+bool Game::turn = true; 
+
 void Game::init() {
     // Initialize the game
     // definine the pieces
@@ -100,7 +102,7 @@ void Game::play() {
                 std::cout << "chose your destination: \n";
                 cin >> stmp;
                 if(ptmp.canMove(board,stmp) && is_path_clear(ptmp,stmp)){
-                    make_move(ptmp,stmp);
+                    board.make_move(ptmp,stmp);
                 }
             }else if(board.find_by_piece(stmp) == ""){
                 std::cout << "There's no such piece" << std::endl;
@@ -118,7 +120,7 @@ void Game::play() {
                 std::cout << "chose your destination: \n";
                 cin >> stmp;
                 if(ptmp.canMove(board,stmp) && is_path_clear(ptmp,stmp)){
-                    make_move(ptmp,stmp);
+                    board.make_move(ptmp,stmp);
                 }
             }else if(stmp == ""){
                 std::cout << "You need to chose a piece" << std::endl;

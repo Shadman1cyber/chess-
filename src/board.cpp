@@ -248,3 +248,22 @@ void Board::make_move(Piece& p, const string& destination) {
     cleanup();
     }
 
+    // Add this function to board.cpp
+void Board::setPiece(const std::string& position, Piece* piece) {
+    if (piece == nullptr) {
+        // Remove piece at position
+        auto it = occ.find(position);
+        if (it != occ.end()) {
+            occ.erase(it);
+        }
+    } else {
+        // Set/replace piece at position
+        occ[position] = piece;
+    }
+}
+
+// Add destructor implementation
+Board::~Board() {
+    cleanup();
+}
+
