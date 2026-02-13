@@ -153,6 +153,30 @@ src/Io.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess++.dir/build.make CMakeFiles/chess++.dir/src/Io.cpp.s
 .PHONY : src/Io.cpp.s
 
+src/armored_queen.o: src/armored_queen.cpp.o
+.PHONY : src/armored_queen.o
+
+# target to build an object file
+src/armored_queen.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess++.dir/build.make CMakeFiles/chess++.dir/src/armored_queen.cpp.o
+.PHONY : src/armored_queen.cpp.o
+
+src/armored_queen.i: src/armored_queen.cpp.i
+.PHONY : src/armored_queen.i
+
+# target to preprocess a source file
+src/armored_queen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess++.dir/build.make CMakeFiles/chess++.dir/src/armored_queen.cpp.i
+.PHONY : src/armored_queen.cpp.i
+
+src/armored_queen.s: src/armored_queen.cpp.s
+.PHONY : src/armored_queen.s
+
+# target to generate assembly for a file
+src/armored_queen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess++.dir/build.make CMakeFiles/chess++.dir/src/armored_queen.cpp.s
+.PHONY : src/armored_queen.cpp.s
+
 src/bishop.o: src/bishop.cpp.o
 .PHONY : src/bishop.o
 
@@ -224,6 +248,30 @@ src/game.s: src/game.cpp.s
 src/game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess++.dir/build.make CMakeFiles/chess++.dir/src/game.cpp.s
 .PHONY : src/game.cpp.s
+
+src/joker_pawn.o: src/joker_pawn.cpp.o
+.PHONY : src/joker_pawn.o
+
+# target to build an object file
+src/joker_pawn.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess++.dir/build.make CMakeFiles/chess++.dir/src/joker_pawn.cpp.o
+.PHONY : src/joker_pawn.cpp.o
+
+src/joker_pawn.i: src/joker_pawn.cpp.i
+.PHONY : src/joker_pawn.i
+
+# target to preprocess a source file
+src/joker_pawn.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess++.dir/build.make CMakeFiles/chess++.dir/src/joker_pawn.cpp.i
+.PHONY : src/joker_pawn.cpp.i
+
+src/joker_pawn.s: src/joker_pawn.cpp.s
+.PHONY : src/joker_pawn.s
+
+# target to generate assembly for a file
+src/joker_pawn.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess++.dir/build.make CMakeFiles/chess++.dir/src/joker_pawn.cpp.s
+.PHONY : src/joker_pawn.cpp.s
 
 src/king.o: src/king.cpp.o
 .PHONY : src/king.o
@@ -417,6 +465,54 @@ src/rook.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess++.dir/build.make CMakeFiles/chess++.dir/src/rook.cpp.s
 .PHONY : src/rook.cpp.s
 
+src/spy.o: src/spy.cpp.o
+.PHONY : src/spy.o
+
+# target to build an object file
+src/spy.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess++.dir/build.make CMakeFiles/chess++.dir/src/spy.cpp.o
+.PHONY : src/spy.cpp.o
+
+src/spy.i: src/spy.cpp.i
+.PHONY : src/spy.i
+
+# target to preprocess a source file
+src/spy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess++.dir/build.make CMakeFiles/chess++.dir/src/spy.cpp.i
+.PHONY : src/spy.cpp.i
+
+src/spy.s: src/spy.cpp.s
+.PHONY : src/spy.s
+
+# target to generate assembly for a file
+src/spy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess++.dir/build.make CMakeFiles/chess++.dir/src/spy.cpp.s
+.PHONY : src/spy.cpp.s
+
+src/super_pawn.o: src/super_pawn.cpp.o
+.PHONY : src/super_pawn.o
+
+# target to build an object file
+src/super_pawn.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess++.dir/build.make CMakeFiles/chess++.dir/src/super_pawn.cpp.o
+.PHONY : src/super_pawn.cpp.o
+
+src/super_pawn.i: src/super_pawn.cpp.i
+.PHONY : src/super_pawn.i
+
+# target to preprocess a source file
+src/super_pawn.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess++.dir/build.make CMakeFiles/chess++.dir/src/super_pawn.cpp.i
+.PHONY : src/super_pawn.cpp.i
+
+src/super_pawn.s: src/super_pawn.cpp.s
+.PHONY : src/super_pawn.s
+
+# target to generate assembly for a file
+src/super_pawn.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess++.dir/build.make CMakeFiles/chess++.dir/src/super_pawn.cpp.s
+.PHONY : src/super_pawn.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -429,6 +525,9 @@ help:
 	@echo "... src/Io.o"
 	@echo "... src/Io.i"
 	@echo "... src/Io.s"
+	@echo "... src/armored_queen.o"
+	@echo "... src/armored_queen.i"
+	@echo "... src/armored_queen.s"
 	@echo "... src/bishop.o"
 	@echo "... src/bishop.i"
 	@echo "... src/bishop.s"
@@ -438,6 +537,9 @@ help:
 	@echo "... src/game.o"
 	@echo "... src/game.i"
 	@echo "... src/game.s"
+	@echo "... src/joker_pawn.o"
+	@echo "... src/joker_pawn.i"
+	@echo "... src/joker_pawn.s"
 	@echo "... src/king.o"
 	@echo "... src/king.i"
 	@echo "... src/king.s"
@@ -462,6 +564,12 @@ help:
 	@echo "... src/rook.o"
 	@echo "... src/rook.i"
 	@echo "... src/rook.s"
+	@echo "... src/spy.o"
+	@echo "... src/spy.i"
+	@echo "... src/spy.s"
+	@echo "... src/super_pawn.o"
+	@echo "... src/super_pawn.i"
+	@echo "... src/super_pawn.s"
 .PHONY : help
 
 

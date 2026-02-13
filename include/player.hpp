@@ -10,7 +10,7 @@ class Player{
     public:
         Player() = default;  
         void setName(std::string);
-        std::string getName();
+        std::string getName() const;
         void setScore(int);
         int getScore();
 };

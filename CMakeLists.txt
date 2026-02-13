@@ -18,7 +18,12 @@ add_executable(chess++
     src/knight.cpp
     src/pawn.cpp
     src/player.cpp
+    src/player.cpp
     src/Io.cpp
+    src/super_pawn.cpp
+    src/armored_queen.cpp
+    src/spy.cpp
+    src/joker_pawn.cpp
 )
 
 if(WIN32)

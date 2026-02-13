@@ -240,6 +240,62 @@ CMakeFiles/chess++.dir/src/Io.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chess++.dir/src/Io.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ashimashi/Desktop/chess++/chess-/src/Io.cpp -o CMakeFiles/chess++.dir/src/Io.cpp.s
 
+CMakeFiles/chess++.dir/src/super_pawn.cpp.o: CMakeFiles/chess++.dir/flags.make
+CMakeFiles/chess++.dir/src/super_pawn.cpp.o: /home/ashimashi/Desktop/chess++/chess-/src/super_pawn.cpp
+CMakeFiles/chess++.dir/src/super_pawn.cpp.o: CMakeFiles/chess++.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ashimashi/Desktop/chess++/chess-/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/chess++.dir/src/super_pawn.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess++.dir/src/super_pawn.cpp.o -MF CMakeFiles/chess++.dir/src/super_pawn.cpp.o.d -o CMakeFiles/chess++.dir/src/super_pawn.cpp.o -c /home/ashimashi/Desktop/chess++/chess-/src/super_pawn.cpp
+
+CMakeFiles/chess++.dir/src/super_pawn.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chess++.dir/src/super_pawn.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ashimashi/Desktop/chess++/chess-/src/super_pawn.cpp > CMakeFiles/chess++.dir/src/super_pawn.cpp.i
+
+CMakeFiles/chess++.dir/src/super_pawn.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chess++.dir/src/super_pawn.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ashimashi/Desktop/chess++/chess-/src/super_pawn.cpp -o CMakeFiles/chess++.dir/src/super_pawn.cpp.s
+
+CMakeFiles/chess++.dir/src/armored_queen.cpp.o: CMakeFiles/chess++.dir/flags.make
+CMakeFiles/chess++.dir/src/armored_queen.cpp.o: /home/ashimashi/Desktop/chess++/chess-/src/armored_queen.cpp
+CMakeFiles/chess++.dir/src/armored_queen.cpp.o: CMakeFiles/chess++.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ashimashi/Desktop/chess++/chess-/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/chess++.dir/src/armored_queen.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess++.dir/src/armored_queen.cpp.o -MF CMakeFiles/chess++.dir/src/armored_queen.cpp.o.d -o CMakeFiles/chess++.dir/src/armored_queen.cpp.o -c /home/ashimashi/Desktop/chess++/chess-/src/armored_queen.cpp
+
+CMakeFiles/chess++.dir/src/armored_queen.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chess++.dir/src/armored_queen.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ashimashi/Desktop/chess++/chess-/src/armored_queen.cpp > CMakeFiles/chess++.dir/src/armored_queen.cpp.i
+
+CMakeFiles/chess++.dir/src/armored_queen.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chess++.dir/src/armored_queen.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ashimashi/Desktop/chess++/chess-/src/armored_queen.cpp -o CMakeFiles/chess++.dir/src/armored_queen.cpp.s
+
+CMakeFiles/chess++.dir/src/spy.cpp.o: CMakeFiles/chess++.dir/flags.make
+CMakeFiles/chess++.dir/src/spy.cpp.o: /home/ashimashi/Desktop/chess++/chess-/src/spy.cpp
+CMakeFiles/chess++.dir/src/spy.cpp.o: CMakeFiles/chess++.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ashimashi/Desktop/chess++/chess-/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/chess++.dir/src/spy.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess++.dir/src/spy.cpp.o -MF CMakeFiles/chess++.dir/src/spy.cpp.o.d -o CMakeFiles/chess++.dir/src/spy.cpp.o -c /home/ashimashi/Desktop/chess++/chess-/src/spy.cpp
+
+CMakeFiles/chess++.dir/src/spy.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chess++.dir/src/spy.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ashimashi/Desktop/chess++/chess-/src/spy.cpp > CMakeFiles/chess++.dir/src/spy.cpp.i
+
+CMakeFiles/chess++.dir/src/spy.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chess++.dir/src/spy.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ashimashi/Desktop/chess++/chess-/src/spy.cpp -o CMakeFiles/chess++.dir/src/spy.cpp.s
+
+CMakeFiles/chess++.dir/src/joker_pawn.cpp.o: CMakeFiles/chess++.dir/flags.make
+CMakeFiles/chess++.dir/src/joker_pawn.cpp.o: /home/ashimashi/Desktop/chess++/chess-/src/joker_pawn.cpp
+CMakeFiles/chess++.dir/src/joker_pawn.cpp.o: CMakeFiles/chess++.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ashimashi/Desktop/chess++/chess-/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/chess++.dir/src/joker_pawn.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chess++.dir/src/joker_pawn.cpp.o -MF CMakeFiles/chess++.dir/src/joker_pawn.cpp.o.d -o CMakeFiles/chess++.dir/src/joker_pawn.cpp.o -c /home/ashimashi/Desktop/chess++/chess-/src/joker_pawn.cpp
+
+CMakeFiles/chess++.dir/src/joker_pawn.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chess++.dir/src/joker_pawn.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ashimashi/Desktop/chess++/chess-/src/joker_pawn.cpp > CMakeFiles/chess++.dir/src/joker_pawn.cpp.i
+
+CMakeFiles/chess++.dir/src/joker_pawn.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chess++.dir/src/joker_pawn.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ashimashi/Desktop/chess++/chess-/src/joker_pawn.cpp -o CMakeFiles/chess++.dir/src/joker_pawn.cpp.s
+
 # Object files for target chess++
 chess_______OBJECTS = \
 "CMakeFiles/chess++.dir/src/main.cpp.o" \
@@ -253,7 +309,11 @@ chess_______OBJECTS = \
 "CMakeFiles/chess++.dir/src/knight.cpp.o" \
 "CMakeFiles/chess++.dir/src/pawn.cpp.o" \
 "CMakeFiles/chess++.dir/src/player.cpp.o" \
-"CMakeFiles/chess++.dir/src/Io.cpp.o"
+"CMakeFiles/chess++.dir/src/Io.cpp.o" \
+"CMakeFiles/chess++.dir/src/super_pawn.cpp.o" \
+"CMakeFiles/chess++.dir/src/armored_queen.cpp.o" \
+"CMakeFiles/chess++.dir/src/spy.cpp.o" \
+"CMakeFiles/chess++.dir/src/joker_pawn.cpp.o"
 
 # External object files for target chess++
 chess_______EXTERNAL_OBJECTS =
@@ -270,10 +330,14 @@ chess++: CMakeFiles/chess++.dir/src/knight.cpp.o
 chess++: CMakeFiles/chess++.dir/src/pawn.cpp.o
 chess++: CMakeFiles/chess++.dir/src/player.cpp.o
 chess++: CMakeFiles/chess++.dir/src/Io.cpp.o
+chess++: CMakeFiles/chess++.dir/src/super_pawn.cpp.o
+chess++: CMakeFiles/chess++.dir/src/armored_queen.cpp.o
+chess++: CMakeFiles/chess++.dir/src/spy.cpp.o
+chess++: CMakeFiles/chess++.dir/src/joker_pawn.cpp.o
 chess++: CMakeFiles/chess++.dir/build.make
 chess++: CMakeFiles/chess++.dir/compiler_depend.ts
 chess++: CMakeFiles/chess++.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ashimashi/Desktop/chess++/chess-/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable chess++"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ashimashi/Desktop/chess++/chess-/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable chess++"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/chess++.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

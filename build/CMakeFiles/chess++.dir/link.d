@@ -14,6 +14,10 @@ chess++: \
   CMakeFiles/chess++.dir/src/pawn.cpp.o \
   CMakeFiles/chess++.dir/src/player.cpp.o \
   CMakeFiles/chess++.dir/src/Io.cpp.o \
+  CMakeFiles/chess++.dir/src/super_pawn.cpp.o \
+  CMakeFiles/chess++.dir/src/armored_queen.cpp.o \
+  CMakeFiles/chess++.dir/src/spy.cpp.o \
+  CMakeFiles/chess++.dir/src/joker_pawn.cpp.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so \
@@ -71,6 +75,14 @@ CMakeFiles/chess++.dir/src/pawn.cpp.o:
 CMakeFiles/chess++.dir/src/player.cpp.o:
 
 CMakeFiles/chess++.dir/src/Io.cpp.o:
+
+CMakeFiles/chess++.dir/src/super_pawn.cpp.o:
+
+CMakeFiles/chess++.dir/src/armored_queen.cpp.o:
+
+CMakeFiles/chess++.dir/src/spy.cpp.o:
+
+CMakeFiles/chess++.dir/src/joker_pawn.cpp.o:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so:
 
