@@ -107,6 +107,9 @@ class Board{
 
             // Overload == operator to check if two iterators point to the same location
             bool operator==(const const_iterator &o) const { 
+                // Handle end iterators (empty position) safely
+                if (pos.empty() && o.pos.empty()) return true;
+                if (pos.empty() || o.pos.empty()) return false;
                 return (pos[0] == o.pos[0] && pos[1] == o.pos[1]);
             }
 
