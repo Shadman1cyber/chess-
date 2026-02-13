@@ -1,5 +1,4 @@
 #include "board.hpp"
-#include "include/piece.hpp"
 #include "king.hpp"
 #include "game.hpp"
 

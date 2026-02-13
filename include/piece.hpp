@@ -1,11 +1,10 @@
-#ifndef PEACE_HPP
+#ifndef PIECE_HPP
 #define PIECE_HPP
 
 #include <iostream>
 #include <vector>
-#include "board.hpp"
 
-typedef std::pair<char, char> Position;
+class Board;
 class Piece{
     private:
         bool Is_white;

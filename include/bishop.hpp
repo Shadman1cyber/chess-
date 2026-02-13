@@ -2,6 +2,7 @@
 #define BISHOP_HPP
 
 #include "piece.hpp"
+#include "board.hpp"
 #include <iostream>
 #include <vector>
 

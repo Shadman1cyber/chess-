@@ -2,6 +2,7 @@
 #define KING_HPP
 
 #include "piece.hpp"
+#include "board.hpp"
 
 class King : public Piece {
     public:

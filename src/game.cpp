@@ -82,10 +82,10 @@ void Game::init() {
     }else if(tmp == 3){
         mode = Mode::MissionMode;
     }
-    play(board);
+    play();
 }
 
-void Game::play(Board& board) {
+void Game::play() {
     std::cout << "Game started" << std::endl;
     // Game loop
     turn = true;
@@ -127,6 +127,8 @@ void Game::play(Board& board) {
             }
         }
     }
+    while(true && mode == Mode::EnergyMode){}
+    while(true && mode == Mode::MissionMode){}
 }
 
 

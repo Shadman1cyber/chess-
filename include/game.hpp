@@ -17,26 +17,12 @@ class Game {
         Game();
         ~Game();
         void init();
-        void play(Board& board);
+        void play();
         void printBoard(){board.display();}
-        void printWinner();
-        void printTurn();
-        void printPlayer();
-        void printMode();
-        void setPlayer(Player, Player);
-        void setMode(Mode);
-        void setTurn(int);
-        void setWinner(Player);
-        Player getPlayer1();
-        Player getPlayer2();
-        Mode getMode();
-        int getTurn();
-        Player getWinner();
 
 
         // these are added
 
-        Game& operator=(const Game &game);
         static bool turn_white() { return turn; }
 
         bool is_valid_game() const { return board.has_valid_kings(); }

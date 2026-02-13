@@ -1,0 +1,3 @@
+/home/ashimashi/Desktop/chess++/chess-/build/CMakeFiles/chess++.dir
+/home/ashimashi/Desktop/chess++/chess-/build/CMakeFiles/edit_cache.dir
+/home/ashimashi/Desktop/chess++/chess-/build/CMakeFiles/rebuild_cache.dir

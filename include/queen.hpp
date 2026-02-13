@@ -2,6 +2,7 @@
 #define QUEEN_HPP
 
 #include "piece.hpp"
+#include "board.hpp"
 
 class Queen : public Piece {
         

@@ -2,6 +2,7 @@
 #define ROOK_HPP
 
 #include "piece.hpp"
+#include "board.hpp"
 
 class Rook : public Piece {
     public:

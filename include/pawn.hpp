@@ -2,6 +2,7 @@
 #define PAWN_HPP
 
 #include "piece.hpp"
+#include "board.hpp"
 
 class Pawn : public Piece {
     public:

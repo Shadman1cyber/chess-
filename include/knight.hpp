@@ -2,6 +2,7 @@
 #define KNIGHT_HPP
 
 #include "piece.hpp"
+#include "board.hpp"
 
 class Knight : public Piece {
     public:
