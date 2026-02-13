@@ -51,10 +51,21 @@ string Board::find_by_piece(const std::string& piece_designator) const {
 
 
 // Adds new piece to game board
+// Accepts coordinates in either upper- or lowercase and validates they are on the board.
 void Board::add_piece(const string &position,Piece* piece) {
-    if (position.size() != 2 ||
-        position[0] < 'A' || position[0] > 'H' ||
-        position[1] < '1' || position[1] > '8') {
+    if (position.size() != 2) {
+        throw ("invalid position");
+    }
+
+    char file = position[0];
+    char rank = position[1];
+
+    // Normalise case only for validation (we keep the original string as the key)
+    if (file >= 'a' && file <= 'h') {
+        file = static_cast<char>(file - 'a' + 'A');
+    }
+
+    if (file < 'A' || file > 'H' || rank < '1' || rank > '8') {
         throw ("invalid position");
     }
 
@@ -206,28 +217,44 @@ bool Board::isStalemate(bool is_white) const {
 
 
 void Board::make_move(Piece& p, const string& destination) {
-        
+
         string start = find_by_piece(p.symbol());
-        
-        // Throw s if player tries to make an illegal move
-        if (start[0] > 'H' || start[0] < 'A' || start[1] < '1' || start[1] > '8') {
+
+        // Basic sanity check on coordinate sizes
+        if (start.size() != 2 || destination.size() != 2) {
+            throw ("invalid position");
+        }
+
+        char s_file = start[0];
+        char s_rank = start[1];
+        char d_file = destination[0];
+        char d_rank = destination[1];
+
+        // Normalise files to uppercase for validation only
+        if (s_file >= 'a' && s_file <= 'h') {
+            s_file = static_cast<char>(s_file - 'a' + 'A');
+        }
+        if (d_file >= 'a' && d_file <= 'h') {
+            d_file = static_cast<char>(d_file - 'a' + 'A');
+        }
+
+        // Throw if player tries to make an illegal move (off-board coordinates)
+        if (s_file < 'A' || s_file > 'H' || s_rank < '1' || s_rank > '8') {
             throw ("start position is not on board");
         }
 
-        
-
-        if (destination[0] > 'H' || destination[1] < 'A' || destination[2] < '1' || destination[2] > '8') {
+        if (d_file < 'A' || d_file > 'H' || d_rank < '1' || d_rank > '8') {
             throw ("destination position is not on board");
         }
 
         if (p.getColor() != Game::turn_white()) {
             throw ("piece color and turn do not match");
         }
-        
+
         occ.erase(start);
         occ[destination] = &p;
 
-	}
+}
 
 
     Piece* Board::get_piece(const string& position) const {
