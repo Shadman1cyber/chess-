@@ -1,9 +1,9 @@
-CMakeFiles/chess++.dir/src/game.cpp.o: \
- /home/ashimashi/Desktop/chess++/chess-/src/game.cpp \
+CMakeFiles/chess++.dir/src/super_pawn.cpp.o: \
+ /home/ashimashi/Desktop/chess++/chess-/src/super_pawn.cpp \
  /usr/include/stdc-predef.h \
- /home/ashimashi/Desktop/chess++/chess-/include/game.hpp \
- /home/ashimashi/Desktop/chess++/chess-/include/mode.hpp \
- /home/ashimashi/Desktop/chess++/chess-/include/player.hpp \
+ /home/ashimashi/Desktop/chess++/chess-/include/super_pawn.hpp \
+ /home/ashimashi/Desktop/chess++/chess-/include/pawn.hpp \
+ /home/ashimashi/Desktop/chess++/chess-/include/piece.hpp \
  /usr/include/c++/15.2.1/iostream \
  /usr/include/c++/15.2.1/bits/requires_hosted.h \
  /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -148,37 +148,34 @@ CMakeFiles/chess++.dir/src/game.cpp.o: \
  /usr/include/c++/15.2.1/bits/locale_facets.tcc \
  /usr/include/c++/15.2.1/bits/basic_ios.tcc \
  /usr/include/c++/15.2.1/bits/ostream.tcc /usr/include/c++/15.2.1/istream \
- /usr/include/c++/15.2.1/bits/istream.tcc \
+ /usr/include/c++/15.2.1/bits/istream.tcc /usr/include/c++/15.2.1/vector \
+ /usr/include/c++/15.2.1/bits/stl_uninitialized.h \
+ /usr/include/c++/15.2.1/bits/stl_vector.h \
+ /usr/include/c++/15.2.1/bits/stl_bvector.h \
+ /usr/include/c++/15.2.1/bits/vector.tcc \
  /home/ashimashi/Desktop/chess++/chess-/include/board.hpp \
  /usr/include/c++/15.2.1/map /usr/include/c++/15.2.1/bits/stl_tree.h \
  /usr/include/c++/15.2.1/ext/aligned_buffer.h \
  /usr/include/c++/15.2.1/bits/node_handle.h \
  /usr/include/c++/15.2.1/bits/stl_map.h \
  /usr/include/c++/15.2.1/bits/stl_multimap.h \
- /usr/include/c++/15.2.1/bits/erase_if.h \
- /home/ashimashi/Desktop/chess++/chess-/include/piece.hpp \
- /usr/include/c++/15.2.1/vector \
- /usr/include/c++/15.2.1/bits/stl_uninitialized.h \
- /usr/include/c++/15.2.1/bits/stl_vector.h \
- /usr/include/c++/15.2.1/bits/stl_bvector.h \
- /usr/include/c++/15.2.1/bits/vector.tcc \
- /home/ashimashi/Desktop/chess++/chess-/include/king.hpp \
- /home/ashimashi/Desktop/chess++/chess-/include/rook.hpp \
- /home/ashimashi/Desktop/chess++/chess-/include/bishop.hpp \
- /home/ashimashi/Desktop/chess++/chess-/include/knight.hpp \
- /home/ashimashi/Desktop/chess++/chess-/include/pawn.hpp \
- /home/ashimashi/Desktop/chess++/chess-/include/queen.hpp \
- /home/ashimashi/Desktop/chess++/chess-/include/piece.hpp \
- /home/ashimashi/Desktop/chess++/chess-/include/super_pawn.hpp \
- /home/ashimashi/Desktop/chess++/chess-/include/pawn.hpp \
- /home/ashimashi/Desktop/chess++/chess-/include/armored_queen.hpp \
- /home/ashimashi/Desktop/chess++/chess-/include/queen.hpp \
- /home/ashimashi/Desktop/chess++/chess-/include/spy.hpp \
- /home/ashimashi/Desktop/chess++/chess-/include/joker_pawn.hpp \
- /home/ashimashi/Desktop/chess++/chess-/include/Io.hpp \
- /usr/include/c++/15.2.1/limits /usr/include/c++/15.2.1/fstream \
- /usr/include/c++/15.2.1/bits/codecvt.h \
- /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
- /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
- /usr/include/c++/15.2.1/bits/fstream.tcc /usr/include/c++/15.2.1/sstream \
- /usr/include/c++/15.2.1/bits/sstream.tcc
+ /usr/include/c++/15.2.1/bits/erase_if.h /usr/include/c++/15.2.1/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h /usr/include/bits/mathcalls-macros.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/15.2.1/bits/specfun.h \
+ /usr/include/c++/15.2.1/limits /usr/include/c++/15.2.1/tr1/gamma.tcc \
+ /usr/include/c++/15.2.1/tr1/special_function_util.h \
+ /usr/include/c++/15.2.1/tr1/bessel_function.tcc \
+ /usr/include/c++/15.2.1/tr1/beta_function.tcc \
+ /usr/include/c++/15.2.1/tr1/ell_integral.tcc \
+ /usr/include/c++/15.2.1/tr1/exp_integral.tcc \
+ /usr/include/c++/15.2.1/tr1/hypergeometric.tcc \
+ /usr/include/c++/15.2.1/tr1/legendre_function.tcc \
+ /usr/include/c++/15.2.1/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/15.2.1/tr1/poly_hermite.tcc \
+ /usr/include/c++/15.2.1/tr1/poly_laguerre.tcc \
+ /usr/include/c++/15.2.1/tr1/riemann_zeta.tcc
